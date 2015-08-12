@@ -12,10 +12,11 @@ Movie data walkthrough
  	SELECT * from Movies m
  	WHERE m.vote_average = 3
 
-### what about a range?
+### what about a range? (show query cost)
  	SELECT * from Movies m
  	WHERE m.vote_average > 2
  	AND m.vote_average < 3
 
 ### convert vote_average to range query
 
+### re-run query (show query cost)
