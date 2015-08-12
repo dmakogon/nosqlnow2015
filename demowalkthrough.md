@@ -31,3 +31,6 @@ Movie data walkthrough
  * collection is still accessible during conversion - async background operation
 
 ### re-run query (show query cost)
+
+## Precision and space-vs-perf
+*TBD
