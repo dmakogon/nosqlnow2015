@@ -1,1 +1,1 @@
-/s:JsonFile /s.Files:C:\\Users\\Ryan\\Desktop\\data\\*.* /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://nosqlnow.documents.azure.com:443/;AccountKey=q0iDn5sn7hFV0Iple0aMlGXaEdEuLyWv8v0X+6eiYcpOV66UR5tBttq24dSc8R2yPAH/NZFZgDMGplBEpMDeWg==;Database=demo; /t.Collection:movies /t.IdField:id /t.DisableIdGeneration
+/s:JsonFile /s.Files:C:\\Users\\Ryan\\Desktop\\data\\*.* /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://nosqlnow.documents.azure.com:443/;AccountKey=[ACCOUNT KEY];Database=demo; /t.Collection:movies /t.IdField:id /t.DisableIdGeneration
