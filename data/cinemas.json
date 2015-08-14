@@ -3,7 +3,14 @@
 	"name": "Cinéarts @ Santana Row",
 	"address": {"street": "3088 Olsen Drive", "city": "San Jose", "zip":95128, "state": "CA"},
 	"phone": "408 554-700",
-	"amenities": ["Wheelchair Accessible", "Listening Devices", "Café", "Stadium Seating", "Digital Projection" ],
+	"amenities": ["Wheelchair Accessible", "Listening Devices", "Café", "Stadium Seating", "Digital Projection" ], 
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	}
 },
 {
 	"id": "2",
@@ -11,6 +18,13 @@
 	"address": {"street": "2306 Almaden Road", "city": "San Jose", "zip":95125, "state": "CA"},
 	"phone": "408 265-7373",
 	"amenities": ["Wheelchair Accessible", "Listening Devices", "Party Room", "Stadium Seating", "Digital Projection" ],
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	}
 },
 {
 	"id": "3",
@@ -18,6 +32,13 @@
 	"address": {"street": "2190 Eastridge Loop", "city": "San Jose", "state": "CA", "zip": 95122},
 	"phone": "408 274-2274",
 	"amenities": ["IMAX", "Digital Projection" ],
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	},
 },
 {
 	"id": "4",
@@ -25,6 +46,13 @@
 	"address": {"street": "925 Blossom Hill Rd", "city": "San Jose", "zip":95123, "state": "CA"},
 	"phone": "408 225-7340",
 	"amenities": ["Wheelchair Accessible", "Listening Devices", "Café", ""Stadium Seating", "Game Room" ],
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	},
 },
 {
 	"id": "5",
@@ -32,6 +60,13 @@
 	"address": {"street": "1010 Great Mall Drive", "city": "Milpitas", "zip":95035, "state": "CA"},
 	"phone": "408 942-7441",
 	"amenities": ["Wheelchair Accessible", "Café", "Stadium Seating", "Game Room" ],
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	},
 },
 {
 	"id": "6",
@@ -39,6 +74,13 @@
 	"address": {"street": "2501 S. Winchester Blvd", "city": "Campbell", "zip":95008, "state": "CA"},
 	"phone": "408 378-2425",
 	"amenities": ["Wheelchair Accessible", "Listening Devices", "Game Room", "Stadium Seating", "Digital Projection" ],
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	}
 },
 {
 	"id": "7",
@@ -46,6 +88,13 @@
 	"address": {"street": "3111 Mission College Blvd", "city": "Santa Clara", "zip":95054, "state": "CA"},
 	"phone": "408 919-0282",
 	"amenities": ["IMAX", "Digital Projection" ],
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	}
 },
 {
 	"id": "8",
@@ -53,16 +102,37 @@
 	"address": {"street": "10123 N. Wolfe Road", "city": "Cupertino", "zip": 95014, "state": "CA"},
 	"phone": "408 554-700",
 	"amenities": ["IMAX", "Digital Projection" ],
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	}
 },
 {
 	"id": "8",
 	"name": "Camera 7",
 	"address": {"street": "1875 S. Bascom Ave", "city": "Campbell", "zip":95008, "state": "CA"},
 	"phone": "408 559-6900",
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	}
 },
 {
 	"id": "10",
 	"name": "Bluelight Cinemas",
 	"address": {"street": "21275 Stevens Creek Blvd", "city": "Cupertino", "zip":95014, "state": "CA"},,
 	"phone": "408 554-700",
+	"location": {
+		"type": "Point",
+		"coordinates": [
+			37.318783,
+			-121.949142
+		]
+	}
 }
