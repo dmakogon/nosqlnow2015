@@ -1,0 +1,2 @@
+https://nosqlnow.documents.azure.com:443/
+q0iDn5sn7hFV0Iple0aMlGXaEdEuLyWv8v0X+6eiYcpOV66UR5tBttq24dSc8R2yPAH/NZFZgDMGplBEpMDeWg==

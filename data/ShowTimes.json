@@ -1,0 +1,11 @@
+{
+	"id": "1_1"
+	"movie": {"id":"1", "title":"The Man from U.N.C.L.E.", "pg-rating": "13", "starts": 4, "duration": "116", "genre" : "Action/Adventure"}
+	"cinema": {"id": "1", "name": "Cinéarts @ Santana Row"},
+	"showtimes": [
+		{"date": "8/13/2015", "hour":20, "min":0, "epoch": 1439452800},
+		{"date": "8/14/2015", "hour":17, "min":45, "epoch": 1439452800},
+		{"date": "8/14/2015", "hour":19, "min":15, "epoch": 1439452800},	
+		{"date": "8/14/2015", "hour":22, "min":30, "epoch": 1439452800}
+	]
+}
