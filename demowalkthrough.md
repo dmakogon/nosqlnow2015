@@ -19,6 +19,10 @@ Movie data walkthrough
 * Indexes are automatically created for every single property
 * Usable as soon as content is saved
 
+        select m.title
+        from movies m
+        join g in m.genres where g.name="Comedy" 
+        
 ## Range queries
 
 
