@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": "cinema1",
         "name": "Cinéarts @ Santana Row",
         "address": { "street": "3088 Olsen Drive", "city": "San Jose", "zip": 95128, "state": "CA" },
         "phone": "408 554-700",
@@ -12,10 +12,11 @@
                 37.318783
 
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "2",
+        "id": "cinema2",
         "name": "Cinelux Almaden Cinema",
         "address": { "street": "2306 Almaden Road", "city": "San Jose", "zip": 95125, "state": "CA" },
         "phone": "408 265-7373",
@@ -26,10 +27,11 @@
                 -121.880013,
                 37.292118
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "3",
+        "id": "cinema3",
         "name": "AMC Eastridge",
         "address": { "street": "2190 Eastridge Loop", "city": "San Jose", "state": "CA", "zip": 95122 },
         "phone": "408 274-2274",
@@ -40,10 +42,11 @@
                 -121.814188,
                 37.322955
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "4",
+        "id": "cinema4",
         "name": "Century 20 Oakridge and XD",
         "address": { "street": "925 Blossom Hill Rd", "city": "San Jose", "zip": 95123, "state": "CA" },
         "phone": "408 225-7340",
@@ -60,10 +63,11 @@
                 -121.862038,
                 37.251991
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "5",
+        "id": "cinema5",
         "name": "Century 20 Great Mall and XD",
         "address": { "street": "1010 Great Mall Drive", "city": "Milpitas", "zip": 95035, "state": "CA" },
         "phone": "408 942-7441",
@@ -74,10 +78,11 @@
                 -121.898239,
                 37.413120
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "6",
+        "id": "cinema6",
         "name": "Cinelux Plaza Theatre",
         "address": { "street": "2306 Almaden Rd", "city": "San Jose", "zip": 95125, "state": "CA" },
         "phone": "408 265-7373",
@@ -88,10 +93,11 @@
                 -121.880012,                
                 37.292118
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "7",
+        "id": "cinema7",
         "name": "AMC Mercado",
         "address": { "street": "3111 Mission College Blvd", "city": "Santa Clara", "zip": 95054, "state": "CA" },
         "phone": "408 919-0282",
@@ -102,12 +108,12 @@
                 -121.983398,
                 37.389194
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "8",
+        "id": "cinema8",
         "name": "AMC Cupertino Square",
-        ,
         "address": { "street": "10123 N. Wolfe Road", "city": "Cupertino", "zip": 95014, "state": "CA" },
         "phone": "408 554-700",
         "amenities": [ "IMAX", "Digital Projection" ],
@@ -117,10 +123,11 @@
                 -122.014893,
                 37.327152
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "8",
+        "id": "cinema11",
         "name": "Camera 7",
         "address": { "street": "1875 S. Bascom Ave", "city": "Campbell", "zip": 95008, "state": "CA" },
         "phone": "408 559-6900",
@@ -130,13 +137,13 @@
                 -121.933395,
                 37.288445
             ]
-        }
+        },
+        "type": "cinema"
     },
     {
-        "id": "10",
+        "id": "cinema10",
         "name": "Bluelight Cinemas",
         "address": { "street": "21275 Stevens Creek Blvd", "city": "Cupertino", "zip": 95014, "state": "CA" },
-        ,
         "phone": "408 554-700",
         "location": {
             "type": "Point",
@@ -144,6 +151,7 @@
                 -122.047409,
                 37.323494
             ]
-        }
+        },
+        "type": "cinema"
     }
 ]

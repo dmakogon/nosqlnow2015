@@ -1,1 +1,1 @@
-/s:JsonFile /s.Files:C:\\Users\\Ryan\\Desktop\\data\\*.* /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://nosqlnow.documents.azure.com:443/;AccountKey=[ACCOUNT KEY];Database=demo; /t.Collection:movies /t.IdField:id /t.DisableIdGeneration
+/s:JsonFile /s.Files:C:\\Users\\Ryan\\Desktop\\data\\*.* /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://nosqlnow.documents.azure.com:443/;AccountKey=[ACCOUNT KEY];Database=demo; /t.Collection:data /t.IdField:id /t.DisableIdGeneration
