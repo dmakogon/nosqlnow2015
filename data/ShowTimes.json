@@ -1,11 +1,37 @@
-{
-	"id": "1_1"
-	"movie": {"id":"1", "title":"The Man from U.N.C.L.E.", "pg-rating": "13", "starts": 4, "duration": "116", "genre" : "Action/Adventure"}
-	"cinema": {"id": "1", "name": "Cinéarts @ Santana Row"},
-	"showtimes": [
-		{"date": "8/13/2015", "hour":20, "min":0, "epoch": 1439452800},
-		{"date": "8/14/2015", "hour":17, "min":45, "epoch": 1439452800},
-		{"date": "8/14/2015", "hour":19, "min":15, "epoch": 1439452800},	
-		{"date": "8/14/2015", "hour":22, "min":30, "epoch": 1439452800}
-	]
-}
+[
+    {
+        "id": "1_203801",
+        "movie": { "id": "203801", "title": "The Man from U.N.C.L.E.", "rating": 4, "runtime": "116", "genre": "Comedy/Action/Adventure" },
+        "cinema": { "id": "1", "name": "Cinéarts @ Santana Row" },
+        "showtimes": [
+            { "date": "8/19/2015", "hour": 17, "min": 45, "epoch": 1440031500 },
+            { "date": "8/19/2015", "hour": 20, "min": 0, "epoch": 1440039600 },
+            { "date": "8/20/2015", "hour": 19, "min": 15, "epoch": 1440123300 },
+            { "date": "8/20/2015", "hour": 22, "min": 30, "epoch": 1440135000 }
+        ]
+    },
+    {
+        "id": "1_203801",
+        "movie": { "id": "203801", "title": "The Man from U.N.C.L.E.", "rating": 4, "runtime": "116", "genre": "Comedy/Action/Adventure" },
+        "cinema": { "id": "6", "name": "Cinelux Plaza Theatre" },
+        "showtimes": [
+            { "date": "8/19/2015", "hour": 13, "min": 0, "epoch": 1440014400 },
+            { "date": "8/19/2015", "hour": 16, "min": 45, "epoch": 1440027900 },
+            { "date": "8/19/2015", "hour": 18, "min": 30, "epoch": 1440034200 },
+            { "date": "8/19/2015", "hour": 21, "min": 15, "epoch": 1440044100 },
+            { "date": "8/20/2015", "hour": 17, "min": 45, "epoch": 1440117900 },
+            { "date": "8/20/2015", "hour": 19, "min": 15, "epoch": 1440123300 },
+            { "date": "8/20/2015", "hour": 22, "min": 30, "epoch": 1440135000 }
+        ]
+    },
+    {
+        "id": "1_203801",
+        "movie": { "id": "203801", "title": "The Man from U.N.C.L.E.", "rating": 4, "runtime": "116", "genre": "Comedy/Action/Adventure" },
+        "cinema": { "id": "8", "name": "Camera 7" },
+        "showtimes": [
+            { "date": "8/19/2015", "hour": 22, "min": 45, "epoch": 1440049500 },
+            { "date": "8/20/2015", "hour": 18, "min": 15, "epoch": 1440119700 },
+            { "date": "8/20/2015", "hour": 21, "min": 30, "epoch": 1440131400 }
+        ]
+    },
+]
