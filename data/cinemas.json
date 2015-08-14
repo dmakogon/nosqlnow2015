@@ -7,8 +7,9 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.949142,
+			37.318783
+			
 		]
 	}
 },
@@ -21,22 +22,22 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.880013,
+			37.292118
 		]
 	}
 },
 {
 	"id": "3",
-	"name": "AMC Eastridege",
+	"name": "AMC Eastridge",
 	"address": {"street": "2190 Eastridge Loop", "city": "San Jose", "state": "CA", "zip": 95122},
 	"phone": "408 274-2274",
 	"amenities": ["IMAX", "Digital Projection" ],
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.814188,
+			37.322955
 		]
 	},
 },
@@ -49,8 +50,8 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.862038,
+			37.251991
 		]
 	},
 },
@@ -63,8 +64,8 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.898239,
+			37.413120
 		]
 	},
 },
@@ -77,8 +78,8 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.950722,
+			37.278728
 		]
 	}
 },
@@ -91,8 +92,8 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.983398,
+			37.389194
 		]
 	}
 },
@@ -105,8 +106,8 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-122.014893,
+			37.327152
 		]
 	}
 },
@@ -118,8 +119,8 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-121.933395,
+			37.288445
 		]
 	}
 },
@@ -131,8 +132,8 @@
 	"location": {
 		"type": "Point",
 		"coordinates": [
-			37.318783,
-			-121.949142
+			-122.047409,
+			37.323494
 		]
 	}
 }
