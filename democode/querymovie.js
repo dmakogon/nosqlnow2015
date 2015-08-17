@@ -3,13 +3,11 @@
 // Usage: node querymovie movietitle
 
 var DocumentDBClient = require('documentdb').DocumentClient
-  , config = require('../config')
-  , fs = require('fs')
-  , async = require('async')
+  , config = require('./config')
   , databaseId = config.names.database
   , collectionId = config.names.collection
-  , dbLink
-  , collLink;
+  , host = [];
+  , masterKey = [];
 
 
 if (process.argv.length <= 2) {
@@ -19,20 +17,17 @@ if (process.argv.length <= 2) {
  
 var movietitle = process.argv[2];
 
-var host = config.connection.endpoint;
-var masterKey = config.connection.authKey;
-
 var client = new DocumentDBClient(host, {masterKey: masterKey});
 
-var docLink = "dbs/" + databaseId+ "/colls/"+collectionId;
+var collLink = "dbs/" + databaseId+ "/colls/"+collectionId;
 
 var query = "SELECT * from Movies m WHERE m.title = '" + movietitle + "'";
 
-client.queryDocuments(docLink, query).toArray(function (err, results) {
+client.queryDocumentscollLink, query).toArray(function (err, results) {
             if (err) {
                 console.log(err);
 
             } else {
                 console.log(results);
             }
-        });
+});
