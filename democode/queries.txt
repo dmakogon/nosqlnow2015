@@ -1,0 +1,40 @@
+SELECT * 
+FROM movies m 
+WHERE m.vote_average >= 3 
+AND m.vote_average <= 4
+
+SELECT * 
+FROM movies m 
+WHERE m.title = "Ant-Man" 
+
+SELECT m.title, m.overview 
+FROM movies m 
+JOIN g IN m.genres
+WHERE g.name="Comedy" 
+
+SELECT * 
+FROM Movies m 
+WHERE STARTSWITH (m.title, "A")
+
+SELECT * 
+FROM Movies m 
+WHERE m.title BETWEEN "A" AND "B"
+
+SELECT * FROM cinemas c WHERE ST_DISTANCE(c.location, { 
+    "type": "Point", 
+    "coordinates": [-121.889125, 37.33034] 
+}) < 1 * 1600
+
+
+SELECT * FROM cinemas c WHERE ST_WITHIN(c.location, 
+{ 
+    "type": "Polygon",  
+    "coordinates": [[ 
+  [-124.63, 48.36], [-123.87, 46.14],   
+  [-122.23, 45.54], [-119.17, 45.95], 
+  [-116.92, 45.96], [-116.99, 49.00],   
+  [-123.05, 49.02], [-123.15, 48.31], 
+  [-124.63, 48.36]
+]]})
+
+

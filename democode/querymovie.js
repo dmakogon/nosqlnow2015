@@ -35,13 +35,14 @@ queryIterator.executeNext(function (err, results, headers) {
   if (err) {
     console.log(err);
 
+  } else if (results.length == 0) {
+    console.log('no rsults found');
+
   } else {
     console.log(results);
     var charge = headers['x-ms-request-charge'];
-        var doc = results[0];
+    var doc = results[0];
       
-      console.log('Document \'' + doc.id + '\' found, request charge: ' + charge);
-                                
-
+    console.log('Document \'' + doc.id + '\' found, request charge: ' + charge);
   }
 });
