@@ -21,7 +21,7 @@ var collLink = 'dbs/' + databaseId+ '/colls/'+ collectionId;
 console.log('\nQuerying against collection path: '  + collLink + '\n');
 
 var querySpec = {
-    query: 'SELECT * from Movies m WHERE m.title =  @title',
+    query: 'SELECT m.title, m.overview from Movies m WHERE m.title =  @title',
     parameters: [
         {
             name: '@title',
@@ -36,7 +36,7 @@ queryIterator.executeNext(function (err, results, headers) {
     console.log(err);
 
   } else if (results.length == 0) {
-    console.log('no rsults found');
+    console.log('no results found');
 
   } else {
     console.log(results);
