@@ -36,14 +36,10 @@ FROM Movies m where m.id = "movie100397"
 SELECT c.name FROM cinemas c where c.type='cinema'
 
 
-SELECT * FROM cinemas c WHERE ST_DISTANCE(c.location, { 
-    "type": "Point", 
-    "coordinates": [-121.889125, 37.33034] 
-}) < 1 * 1600
-
-
 // search for cinemas in san jose area
-SELECT * FROM cinemas c WHERE ST_WITHIN(c.location, 
+
+SELECT c.name, c.location FROM cinemas c
+ WHERE ST_WITHIN(c.location, 
 { 
     "type": "Polygon",  
     "coordinates": [[ 
@@ -54,3 +50,13 @@ SELECT * FROM cinemas c WHERE ST_WITHIN(c.location,
     [-121.78633332252502,37.34286730373346],
     [-121.88452363014221,37.413800350662875]
 ]]})
+
+// find something within 3 miles of convention center
+
+SELECT c.name, c.location FROM cinemas c WHERE ST_DISTANCE(c.location, { 
+    "type": "Point", 
+    "coordinates": [-121.889125, 37.33034] 
+}) < 3 * 1600
+
+
+
