@@ -10,7 +10,7 @@ We'll search for a specific movie title or other attribute
 
 ### Also run via code:
 
-	`node querymovie <moviename>`
+	node querymovie <moviename>
 	
 ### query by vote score
  	SELECT * from Movies m
@@ -43,7 +43,7 @@ Run `node addrangeindexes`
 * Running `excludepath.js <pathname>` will remove a specific json path from indexing.
 
 ### Try with overview field:
-	`node excludepath '/overview/*'
+	node excludepath '/overview/*
 	
         SELECT * 
 	FROM Movies m 
