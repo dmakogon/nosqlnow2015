@@ -8,6 +8,10 @@ We'll search for a specific movie title or other attribute
 	SELECT * from Movies m
 	WHERE m.title = "Ant-Man"
 
+### Also run via code:
+
+	`node querymovie <moviename>`
+	
 ### query by vote score
  	SELECT * from Movies m
  	WHERE m.vote_average = 3
@@ -31,17 +35,22 @@ We'll search for a specific movie title or other attribute
 ### convert strings to have range indexes
  * collection is still accessible during conversion - async background operation
 
+Run `node addrangeindexes`
+
 ### re-run query (show query cost)
 
 ## Exclude paths
 * Running `excludepath.js <pathname>` will remove a specific json path from indexing.
 
-### Try with '/overview/*'
+### Try with overview field:
+	`node excludepath '/overview/*'
+	
         SELECT * 
 	FROM Movies m 
 	WHERE m.overview = 'Documentary'
-* Afterward, run `resetindex.js`
-* 
+
+### Afterward, run `resetindex.js`
+
 ## Geospatial data
 
 ### First run `addgeospatialindex.js` to create spatial indexes on Point data
