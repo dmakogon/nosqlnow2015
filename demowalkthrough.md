@@ -13,7 +13,7 @@ Also run via code:
 
 	node querymovie <moviename>
 	
-Try it. For example: `node querymovie "Ant-Man"
+Try it. For example: `node querymovie "Ant-Man"`
 
 Here's an example of a range-based query on a numeric property, `vote_average`:
  	SELECT m.title, m.vote_average from Movies m
