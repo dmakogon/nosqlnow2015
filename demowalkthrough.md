@@ -57,13 +57,13 @@ Run `node resetindex`
 
 Here, we'll query for a given overview. Not a realistic query, as nobody would know an entire overview. But here's one small example, with a very small overview:
 
-        SELECT * 
+	SELECT * 
 	FROM Movies m 
 	WHERE m.overview = 'Documentary'
 
 Imagine the query cost, searching for something *within* an overview. This is something better for a full-text-search engine, but... Here's a query which finds Matrix movies:
 
-        SELECT m.title, m.id 
+	SELECT m.title, m.id 
 	FROM Movies m 
 	WHERE CONTAINS(m.overview, "Morpheus")
 
@@ -77,13 +77,13 @@ Try with overview field:
 
 Now, the queries against the overview field will fail. Go ahead, try it:
 
-        SELECT m.title, m.id 
+	SELECT m.title, m.id 
 	FROM Movies m 
 	WHERE CONTAINS(m.overview, "Morpheus")
 	
 You should have gotten an error, because the path `/overview/*` has been removed from indexing. But... we can *still* get to our Matrix movie based on its id:
 
-        SELECT m.title, m.id 
+	SELECT m.title, m.id 
 	FROM Movies m 
 	WHERE m.id = "movie603"
 
