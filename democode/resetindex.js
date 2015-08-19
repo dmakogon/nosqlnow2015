@@ -30,10 +30,13 @@ resetIndex(collLink, function (err) {
 
 function resetIndex(collLink, callback) {
 
-     var indexPolicySpec = {        
+     var indexPolicySpec = {  
+        indexingMode: "consistent",
+        automatic   : true,      
         includedPaths : [
             {
                 path: "/",
+
                 indexes: [
                     {
                         kind: DocumentBase.IndexKind.Hash,
