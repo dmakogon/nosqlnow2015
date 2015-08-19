@@ -1,26 +1,51 @@
-// Simple document query
+// Simple document query for a given genre
+
 var DocumentDBClient = require('documentdb').DocumentClient
   , config = require('../config')
-  , fs = require('fs')
-  , async = require('async')
   , databaseId = config.names.database
   , collectionId = config.names.collection
-  , dbLink
-  , collLink;
+  , host = config.connection.endpoint
+  , masterKey = config.connection.authKey
 
-var host = config.connection.endpoint;
-var masterKey = config.connection.authKey;
+
+if (process.argv.length <= 2) {
+    console.log("Usage: querygenre <genre>");
+    process.exit(-1);
+}
+var movieGenre = process.argv[2];
 
 var client = new DocumentDBClient(host, {masterKey: masterKey});
 
-var docLink = "dbs/" + databaseId+ "/colls/"+collectionId;
-console.log(docLink);
+// Remember the resource model?
+// Path to collection: dbs/databasename/colls/collectionname
+var collLink = 'dbs/' + databaseId+ '/colls/'+ collectionId;
 
-client.queryDocuments(docLink, 'SELECT m.results[0].title FROM movies m').toArray(function (err, results) {
-            if (err) {
-                console.log(err);
+console.log('\nQuerying against collection path: '  + collLink + '\n');
 
-            } else {
-                console.log(results);
-            }
-        });
+var querySpec = {
+    query: 'SELECT m.title from Movies m \
+     JOIN g in m.genres WHERE g.name = @genre',
+    parameters: [
+        {
+            name: '@genre',
+            value: movieGenre
+        }
+    ]
+};
+
+var queryIterator = client.queryDocuments(collLink, querySpec, { maxItemCount: 2} );
+queryIterator.executeNext(function (err, results, headers) {
+  if (err) {
+    console.log(err);
+
+  } else if (results.length == 0) {
+    console.log('no results found');
+
+  } else {
+    console.log(results);
+    var charge = headers['x-ms-request-charge'];
+    var doc = results[0];
+      
+    console.log('Request charge: ' + charge);
+  }
+});
