@@ -1,47 +1,46 @@
 Movie data walkthrough
 ===
 
-## hash queries
-We'll search for a specific movie title or other attribute
+## Hash and Range queries using default indexing
 
-### query by movie title
+We'll search for a specific movie title. By default, string properties are indexed via hash.
+
+Here's a query by movie title
 	SELECT * from Movies m
 	WHERE m.title = "Ant-Man"
 
-### Also run via code:
+Also run via code:
 
 	node querymovie <moviename>
 	
-### query by vote score
- 	SELECT * from Movies m
- 	WHERE m.vote_average >= 3
+Try it. For example: `node querymovie "Ant-Man"
 
-### query on subdocuments: Find document with genre array containing Comedy
+Here's an example of a range-based query on a numeric property, `vote_average`:
+ 	SELECT m.title, m.vote_average from Movies m
+ 	WHERE m.vote_average >= 8
+ 	ORDER by m.vote_average DESC
 
-* Indexes are automatically created for every single property: Range indexes for numeric properties, hash indexes for string properties
-* Usable as soon as content is saved
-
-### As an example, here is a query on an array of a genre within a movie:
+Even sub-document content is queried by default. Here, we query on subdocuments. Each movie contains an array of genres, and we'll find comedies.
 
         select m.title
         from movies m
         join g in m.genres where g.name="Comedy"
 
-### Also run via code (try Comedy, Drama, Documentary...)
+You can also run via code (try Comedy, Drama, Documentary...)
 	node querygenre <genre>
 	
-## Range queries
-### What about a range?
+## The need to modify default indexing
+
+What about a range on strings? Here, we want primarily titles starting with 'A':
  	SELECT * from Movies m
  	WHERE m.title BETWEEN "A" AND "B"
  
-This should have failed.
+This should have failed. Why? The `BETWEEN` clause attempts to search for a string range.
 
 * With hash-based indexes, range queries aren't allowed unless you allow for it.
 * And even if you allow for it, it is costly, because you will end up scanning all content in the property.
 
-### convert strings to have range indexes
- * collection is still accessible during conversion - async background operation
+We an convert strings to have range indexes. The collection is still accessible during conversion.
 
 Run `node addrangeindexes`
 
@@ -53,7 +52,7 @@ Run `node resetindex`
 
 ## Exclude paths
 
-### query for a given overview. Not a realistic query, as nobody would know an entire overview. But here's one small example, with a very small overview:
+Here, we'll query for a given overview. Not a realistic query, as nobody would know an entire overview. But here's one small example, with a very small overview:
 
         SELECT * 
 	FROM Movies m 
