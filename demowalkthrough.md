@@ -34,6 +34,7 @@ You can also run via code (try Comedy, Drama, Documentary...):
 ## The need to modify default indexing
 
 What about a range on strings? Here, we want primarily titles starting with 'A':
+
  	SELECT * from Movies m
  	WHERE m.title BETWEEN "A" AND "B"
  
@@ -71,6 +72,7 @@ Realistically, we would never query overviews (we'd use our full text search eng
 * Running `excludepath.js <pathname>` will remove a specific json path from indexing.
 
 Try with overview field:
+
 	node excludepath '/overview/*'
 
 Now, the queries against the overview field will fail. Go ahead, try it:
