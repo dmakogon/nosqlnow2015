@@ -16,12 +16,14 @@ var movieTitle = process.argv[2];
 
 var client = new DocumentDBClient(host, {masterKey: masterKey});
 
+// Remember the resource model?
+// Path to collection: dbs/databasename/colls/collectionname
 var collLink = 'dbs/' + databaseId+ '/colls/'+ collectionId;
 
 console.log('\nQuerying against collection path: '  + collLink + '\n');
 
 var querySpec = {
-    query: 'SELECT m.title, m.overview from Movies m WHERE m.title =  @title',
+    query: 'SELECT m.title, m.overview, m.id from Movies m WHERE m.title =  @title',
     parameters: [
         {
             name: '@title',

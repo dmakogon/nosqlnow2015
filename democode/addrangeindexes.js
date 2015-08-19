@@ -34,7 +34,7 @@ function addRangeIndex(collLink, callback) {
      var indexPolicySpec = {
         includedPaths: [
             {
-                path: "/*",
+                path: "/",
                 indexes: [
                     {
                         kind: "Range",

@@ -20,21 +20,37 @@ SELECT *
 FROM Movies m 
 WHERE m.title BETWEEN "A" AND "B"
 
+// excluding paths
+// expensive, takes up lots of space in index (cost)
+
+SELECT m.title, m.id
+FROM Movies m where contains( m.overview, "Morpheus")
+
+SELECT m.title, m.id
+FROM Movies m where m.overview = "Documentary"
+
+SELECT m.title, m.id
+FROM Movies m where m.id = "movie100397"
+
+//cinemas
+SELECT c.name FROM cinemas c where c.type='cinema'
+
+
 SELECT * FROM cinemas c WHERE ST_DISTANCE(c.location, { 
     "type": "Point", 
     "coordinates": [-121.889125, 37.33034] 
 }) < 1 * 1600
 
 
+// search for cinemas in san jose area
 SELECT * FROM cinemas c WHERE ST_WITHIN(c.location, 
 { 
     "type": "Polygon",  
     "coordinates": [[ 
-  [-124.63, 48.36], [-123.87, 46.14],   
-  [-122.23, 45.54], [-119.17, 45.95], 
-  [-116.92, 45.96], [-116.99, 49.00],   
-  [-123.05, 49.02], [-123.15, 48.31], 
-  [-124.63, 48.36]
+    [-121.88452363014221,37.413800350662875],
+    [-121.97035431861877,37.39089085641704],
+    [-121.95936799049377,37.29317426435305],
+    [-121.80624604225159,37.27186719156333],
+    [-121.78633332252502,37.34286730373346],
+    [-121.88452363014221,37.413800350662875]
 ]]})
-
-
