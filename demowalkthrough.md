@@ -27,7 +27,8 @@ Even sub-document content is queried by default. Here, we query on subdocuments.
         from movies m
         join g in m.genres where g.name="Comedy"
 
-You can also run via code (try Comedy, Drama, Documentary...)
+You can also run via code (try Comedy, Drama, Documentary...):
+
 	node querygenre <genre>
 	
 ## The need to modify default indexing
