@@ -16,6 +16,7 @@ Also run via code:
 Try it. For example: `node querymovie "Ant-Man"`
 
 Here's an example of a range-based query on a numeric property, `vote_average`:
+
  	SELECT m.title, m.vote_average from Movies m
  	WHERE m.vote_average >= 8
  	ORDER by m.vote_average DESC
