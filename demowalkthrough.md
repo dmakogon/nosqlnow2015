@@ -43,8 +43,10 @@ Run `node addrangeindexes`
 * Running `excludepath.js <pathname>` will remove a specific json path from indexing.
 
 ### Try with overview field:
-	node excludepath '/overview/*
-	
+	node excludepath '/overview/*'
+
+### query for a given overview:
+
         SELECT * 
 	FROM Movies m 
 	WHERE m.overview = 'Documentary'
