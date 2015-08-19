@@ -14,21 +14,29 @@ We'll search for a specific movie title or other attribute
 	
 ### query by vote score
  	SELECT * from Movies m
- 	WHERE m.vote_average = 3
+ 	WHERE m.vote_average >= 3
 
 ### query on subdocuments: Find document with genre array containing Comedy
 
-* Indexes are automatically created for every single property
+* Indexes are automatically created for every single property: Range indexes for numeric properties, hash indexes for string properties
 * Usable as soon as content is saved
+
+### As an example, here is a query on an array of a genre within a movie:
 
         select m.title
         from movies m
         join g in m.genres where g.name="Comedy"
 
+### Also run via code (try Comedy, Drama, Documentary...)
+	node querygenre <genre>
+	
 ## Range queries
-### what about a range? (look at query cost)
+### What about a range?
  	SELECT * from Movies m
  	WHERE m.title BETWEEN "A" AND "B"
+ 
+This should have failed.
+
 * With hash-based indexes, range queries aren't allowed unless you allow for it.
 * And even if you allow for it, it is costly, because you will end up scanning all content in the property.
 
@@ -37,42 +45,73 @@ We'll search for a specific movie title or other attribute
 
 Run `node addrangeindexes`
 
-### re-run query (show query cost)
+Re-run the query, and it should now work.
+
+Reset indexes:
+
+Run `node resetindex`
 
 ## Exclude paths
-* Running `excludepath.js <pathname>` will remove a specific json path from indexing.
 
-### Try with overview field:
-	node excludepath '/overview/*'
-
-### query for a given overview:
+### query for a given overview. Not a realistic query, as nobody would know an entire overview. But here's one small example, with a very small overview:
 
         SELECT * 
 	FROM Movies m 
 	WHERE m.overview = 'Documentary'
 
-### Afterward, run `resetindex.js`
+Imagine the query cost, searching for something *within* an overview. This is something better for a full-text-search engine, but... Here's a query which finds Matrix movies:
+
+        SELECT m.title, m.id 
+	FROM Movies m 
+	WHERE CONTAINS(m.overview, "Morpheus")
+
+Realistically, we would never query overviews (we'd use our full text search engine). So... let's get rid of it in our indexing:
+
+* Running `excludepath.js <pathname>` will remove a specific json path from indexing.
+
+Try with overview field:
+	node excludepath '/overview/*'
+
+Now, the queries against the overview field will fail. Go ahead, try it:
+
+        SELECT m.title, m.id 
+	FROM Movies m 
+	WHERE CONTAINS(m.overview, "Morpheus")
+	
+You should have gotten an error, because the path `/overview/*` has been removed from indexing. But... we can *still* get to our Matrix movie based on its id:
+
+        SELECT m.title, m.id 
+	FROM Movies m 
+	WHERE m.id = "movie603"
+
+Afterward, run `resetindex.js` to go back to defaults.
 
 ## Geospatial data
 
 ### First run `addgeospatialindex.js` to create spatial indexes on Point data
 
-### Now search for movie theaters within 5 miles of San Jose Convention Center
+This adds the `Spatial` index type for data of type `Point`.
+
+Now we can search for theaters roughly within the San Jose area (based on a simple polyglon drawn at the [Simple GeoJSON Editor](https://google-developers.appspot.com/maps/documentation/utils/geojson/).
+
+	SELECT c.name, c.location FROM cinemas c
+	 WHERE ST_WITHIN(c.location, 
+	{ 
+	    "type": "Polygon",  
+	    "coordinates": [[ 
+	    [-121.88452363014221,37.413800350662875],
+	    [-121.97035431861877,37.39089085641704],
+	    [-121.95936799049377,37.29317426435305],
+	    [-121.80624604225159,37.27186719156333],
+	    [-121.78633332252502,37.34286730373346],
+	    [-121.88452363014221,37.413800350662875]
+	]]})
+
+We can also search for theaters within some distance of a Point. In this case, we can query theaters within 3 miles of the San Jose Convention Center:
 
 	SELECT * FROM cinemas c WHERE ST_DISTANCE(c.location, { 
 	  "type": "Point", 
 	  "coordinates": [-121.889125, 37.33034] 
-	}) < 5 * 1600
-
-### Now show theaters within a polygon area:
-
-	SELECT * FROM cinemas c WHERE ST_WITHIN(c.location, 
-	{ 
-	    "type": "Polygon",  
-	    "coordinates": [[	
-		[-124.63, 48.36], [-123.87, 46.14], 	
-		[-122.23, 45.54], [-119.17, 45.95],	
-		[-116.92, 45.96], [-116.99, 49.00], 	
-		[-123.05, 49.02], [-123.15, 48.31],	
-		[-124.63, 48.36]
-	]]})
+	}) < 3 * 1600
+	
+Afterward, run `resetindex.js` to go back to defaults.
