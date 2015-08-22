@@ -1,9 +1,11 @@
 #!/bin/bash
 
+# This product uses the TMDb API but is not endorsed or certified by TMDb.
 # be sure to set api_key in your environment first
 
 id_start=1
 id_end=1000
+echo "This product uses the TMDb API but is not endorsed or certified by TMDb."
 echo "id start: $id_start"
 echo "id end: $id_end"
 for ((i=${id_start};i<=${id_end};i++))
